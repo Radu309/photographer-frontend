@@ -1,0 +1,89 @@
+.contact-title {
+    margin: 0;
+    padding: 0;
+    font-size: 48px;
+    color: #838788;
+}
+.contact-intro {
+    font-size: 16px;
+    padding-bottom: 20px;
+    color: #838788;
+}
+.contact-subtitle {
+    font-size: 30px;
+    color: #838788;
+}
+.contact-data {
+    color: #838788;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-top: 10px;
+}
+.contact-data-child {
+    width: 100%;
+    max-width: 300px;
+}
+.contact-data-child p{
+    margin: 0;
+    line-height: 1;
+    flex: 1;
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+.contact-data-child img {
+    width: 40px;
+    vertical-align: middle;
+    margin-right: 20px;
+}
+hr {
+    border-color: rgba(255,255,255,.6);
+}
+.social-media-list {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+    padding: 0 40px;
+}
+.social-media-list li {
+    position: relative;
+    display: flex;
+    justify-content: center; /* Centrează iconița pe orizontală în interiorul li */
+    align-items: center; /* Centrează iconița pe verticală */
+    /*display: inline-block;*/
+    height: 60px;
+    width: 60px;
+    margin: 10px 3px;
+    line-height: 60px;
+    border-radius: 50%;
+    color: #fff;
+    /*background-color: rgb(27,27,27);*/
+    background-color: rgb(100,100,100);
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+.social-media-list li:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 50%;
+    opacity: 0;
+    box-shadow: 0 0 0 1px #fff;
+    transition: all .2s ease-in-out;
+}
+.social-media-list li:hover {
+    background-color: #fff;
+}
+.social-media-list li:hover:after {
+    opacity: 1;
+    transform: scale(1.12);
+    transition-timing-function: cubic-bezier(0.37,0.74,0.15,1.65);
+}
