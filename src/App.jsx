@@ -11,7 +11,7 @@ const App = () => {
         <Header />
         <main className="main-content">
             <Routes>
-                <Route path={"/"} element={<Home/>} />
+                <Route path={"/home"} element={<Home/>} />
                 <Route path={"/contact"} element={<Contact/>} />
             </Routes>
         </main>
