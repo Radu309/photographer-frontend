@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  // base: '/https://github.com/Radu309/photographer-frontend.git/',
+  base: '/photographer-frontend/',
   server: {
     headers: {
       'Cache-Control': 'no-store',
