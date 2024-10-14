@@ -7,7 +7,7 @@ const container = document.getElementById('root');
 const root = createRoot(container);
 
 root.render(
-    <Router basename="/photographer-frontend">
+    <Router>
         <App/>
     </Router>
 );
