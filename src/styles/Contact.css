@@ -11,6 +11,7 @@
 
 .contact-container {
     display: flex;
+    flex-direction: row-reverse;
     height: 100%;
     width: 80%;
 }
@@ -31,37 +32,26 @@
     justify-content: center;
     align-items: center;
 }
+@media (max-width: 1024px) {
+    .contact-container {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+}
 
-/*#contact {*/
-/*    position: relative;*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-/*    align-items: center;*/
-/*    align-content: center;*/
-/*    width: 100%;*/
-/*    height: 100vh;*/
-/*    background-color: rgb(30, 30, 30);*/
-/*}*/
+/* Responsivitate pentru ecrane mici (telefon) */
+@media (max-width: 768px) {
+    .contact-container {
+        display: flex;
+        flex-direction: column;
+    }
+}
 
-/*.contact-container {*/
-/*    display: flex;*/
-/*    height: 100%;*/
-/*    width: 80%;*/
-/*}*/
-/*.contact-info {*/
-/*    flex: 1;*/
-/*    order: 1;*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-/*    justify-content: center;*/
-/*}*/
-/*.contact-form {*/
-/*    flex: 1;*/
-/*    order: 2;*/
-/*    width: 100%;*/
-/*    height:100%;*/
-/*    display: flex;*/
-/*    flex-direction: row;*/
-/*    justify-content: center;*/
-/*    align-items: center;*/
-/*}*/
+/* Responsivitate pentru ecrane foarte mici (telefoane mici) */
+@media (max-width: 480px) {
+    .contact-container {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
