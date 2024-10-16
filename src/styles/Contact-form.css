@@ -7,7 +7,7 @@ form {
 .contact-form-title {
     font-size: 20px;
     padding-bottom: 20px;
-    color: #838788;
+    color: rgba(200,200,200,0.9);
 }
 
 .form-group {
@@ -22,7 +22,7 @@ form {
     background-color: rgb(20, 20, 20);
     width: 100%;
     padding: .5rem 3.5rem;
-    color: #838788;
+    color: rgba(200,200,200,0.9);
 }
 
 .form-text-block.message {
@@ -34,7 +34,7 @@ form {
     position: absolute;
     left: 15px;
     top: 5px;
-    filter: drop-shadow(0 0 3px #838788);
+    filter: drop-shadow(0 0 3px #C8C8C8E5);
 }
 
 .submit-container {

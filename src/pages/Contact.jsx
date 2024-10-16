@@ -10,6 +10,7 @@ import InstagramIcon from '/src/icons/instagram.svg';
 import LocationIcon from '/src/icons/location.svg';
 import TelephoneIcon from '/src/icons/telephone.svg';
 import Footer from "../components/Footer.jsx";
+import emailjs from '@emailjs/browser';
 
 // Funcții pentru redirectare
 const handleRedirect = (url) => {
@@ -61,33 +62,48 @@ const SocialMediaList = () => (
 );
 
 // Componenta pentru formular de contact
-const ContactForm = () => (
-    <div className="contact-form">
-        <form>
-            <h1 className="contact-form-title">Simte-te liber să ne scrii</h1>
-            <FormGroup icon={UserIcon} placeholder="Nume" inputType="input" />
-            <FormGroup icon={MailIcon} placeholder="E-mail" inputType="input" />
-            <FormGroup icon={MessageIcon} placeholder="Mesaj" inputType="textarea" />
-            <div className="form-group">
-                <div className="submit-container">
-                    <button type="submit" className="btn btn-primary">
-                        Trimite mesaj
-                    </button>
+const ContactForm = () => {
+    const sendEmail = (e) => {
+        e.preventDefault();
+
+        emailjs.sendForm('service_dbsj6bg', 'template_5idm2ar', e.target, "uwY1mIu_Jpdhu_sGz")
+            .then((result) => {
+                console.log(result.text);
+                alert("Mesaj trimis cu succes!");
+            }, (error) => {
+                console.log(error.text);
+                alert("A apărut o eroare. Încearcă din nou.");
+            });
+    };
+
+    return (
+        <div className="contact-form">
+            <form onSubmit={sendEmail}>
+                <h1 className="contact-form-title">Simte-te liber să ne scrii</h1>
+                <FormGroup icon={UserIcon} placeholder="Nume" inputType="input" name="from_subject"/>
+                <FormGroup icon={MailIcon} placeholder="E-mail" inputType="input" name="from_email"/>
+                <FormGroup icon={MessageIcon} placeholder="Mesaj" inputType="textarea" name="message"/>
+                <div className="form-group">
+                    <div className="submit-container">
+                        <button type="submit" className="btn btn-primary">
+                            Trimite mesaj
+                        </button>
+                    </div>
                 </div>
-            </div>
-        </form>
-    </div>
-);
+            </form>
+        </div>
+    )
+};
 
 // Componenta pentru grupul de form (input sau textarea)
-const FormGroup = ({ icon, placeholder, inputType }) => (
+const FormGroup = ({ icon, placeholder, inputType, name }) => (
     <div className="form-group">
         <div className="block-text-container">
             <img className={inputType === 'textarea' ? 'input-icon-message' : 'input-icon'} src={icon} alt="Icon" />
             {inputType === 'textarea' ? (
-                <textarea className="form-text-block message" rows="7" placeholder={placeholder} />
+                <textarea className="form-text-block message" name={name} rows="7" placeholder={placeholder} />
             ) : (
-                <input className="form-text-block thick" placeholder={placeholder} />
+                <input className="form-text-block thick" name={name} placeholder={placeholder} />
             )}
         </div>
     </div>

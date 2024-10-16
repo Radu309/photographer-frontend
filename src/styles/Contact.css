@@ -6,7 +6,6 @@
     align-content: center;
     width: 100%;
     height: 100vh;
-    background-color: rgb(30, 30, 30);
 }
 
 .contact-container {
@@ -41,17 +40,30 @@
 
 /* Responsivitate pentru ecrane mici (telefon) */
 @media (max-width: 768px) {
+    #contact{
+        height: 100%;
+    }
+    .contact-form{
+        padding-top: 2rem;
+    }
     .contact-container {
         display: flex;
         flex-direction: column;
+        padding-bottom: 2rem;
+        padding-top: 2rem;
     }
 }
 
-/* Responsivitate pentru ecrane foarte mici (telefoane mici) */
-@media (max-width: 480px) {
-    .contact-container {
-        display: flex;
-        flex-direction: column;
-    }
-}
+/*!* Responsivitate pentru ecrane foarte mici (telefoane mici) *!*/
+/*@media (max-width: 480px) {*/
+/*    #contact{*/
+/*        height: 100%;*/
+/*        padding-top: 2rem;*/
+
+/*    }*/
+/*    .contact-container {*/
+/*        display: flex;*/
+/*        flex-direction: column;*/
+/*    }*/
+/*}*/
 

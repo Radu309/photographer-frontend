@@ -15,8 +15,11 @@ main {
     /*margin-left: 5vw;*/
     /*width: calc(100vw - 5vw);*/
     width: 100vw;
-    height: 100vw;
-    background-color: #f4f4f4;
+    min-height: 100vh;
+    background-color: rgb(30, 30, 30);
+    background-size: cover; /* Asigură-te că imaginea acoperă întreg fundalul */
+    background-attachment: fixed; /* Asigură că fundalul rămâne fixat când scrollezi */
+    background-position: center;
     flex: 1;
 }
 /*@media (max-width: 1024px) {*/
