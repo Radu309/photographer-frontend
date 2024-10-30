@@ -1,130 +1,47 @@
-/* header.css */
-
-/* Stiluri generale pentru header */
 #header {
     position: fixed;
     top: 0;
-    left: 0;
-    height: 100vh;
-    width: 5vw; /* Lățimea header-ului pe ecrane mari (desktop) */
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    background-color: rgba(0, 0, 0, 1);
-    z-index: 2;
-}
-.sidebar {
-    position: relative;
-    height: 100%;
-}
-.menu-button {
-    z-index: 3;
-    position: absolute;
-    background-color: transparent;
-    border: none;
-    color: white;
-    font-size: 3vw; /* Buton relativ la lățimea ecranului */
-    padding: 1vw;
-    cursor: pointer;
-}
-.menu {
-    position: fixed;
-    top: 0;
-    left: 5vw; /* Meniul începe imediat după header */
-    height: 100%;
-    background-color: rgba(0, 0, 0, 1);
-    overflow: hidden;
-    white-space: nowrap;
-    display: flex;
-    flex-direction: column;
-    /*padding-top: 40%;*/
-    padding-bottom: 40%;
-    transition: left 0.7s ease; /* Tranziție pentru deschiderea meniului */
-}
-.menu.closed {
-    left: -40%; /* Meniul este ascuns */
-}
-.menu.open {
-    left: 5vw;
-    min-width: max-content; /* Se adaptează în funcție de conținut */
-}
-.menu ul {
-    list-style: none;
-}
-.menu ul li {
-    padding: 1vw; /* Spațiere între elementele din meniu */
-}
-.menu ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 0.5rem; /* Dimensiunea fontului pentru desktop */
-}
+    z-index: 1000;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    height: 7rem;
 
-/* Responsivitate pentru ecrane medii (tabletă) */
-@media (max-width: 1024px) {
-    #header {
-        width: 8vw; /* Lățimea header-ului este mai mare pe tabletă */
+    .header-body{
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
-    .menu {
-        left: 8vw;
+    .header-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 80%;
     }
-    .menu-button {
-        font-size: 4vw; /* Butonul mai mare pe tabletă */
-        padding: 2vw;
+    .icon-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 20px;
+        font-weight: bold;
+        color: white;
     }
-    .menu.open {
-        left: 8vw;
+    .contact-button {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #646464;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
     }
-    .menu ul li {
-        padding: 0.5vw; /* Padding suplimentar pentru tabletă */
-    }
-    .menu ul li a {
-        font-size: 1.5rem; /* Dimensiune mai mare pentru font pe tabletă */
-    }
-}
-
-/* Responsivitate pentru ecrane mici (telefon) */
-@media (max-width: 768px) {
-    #header {
-        width: 10vw; /* Lățimea header-ului este mai mare pe telefon */
-    }
-    .menu {
-        left: 10vw;
-    }
-    .menu-button {
-        font-size: 5vw; /* Buton mai mare pe telefoane */
-        padding: 2.5vw;
-    }
-    .menu.open {
-        left: 10vw;
-    }
-    .menu ul li {
-        padding: 2vw; /* Padding ajustat pentru telefoane */
-    }
-    .menu ul li a {
-        font-size: 1rem; /* Dimensiune mai mare pentru font pe telefoane */
+    .contact-button:hover {
+        background-color: #787878;
     }
 }
-
-/* Responsivitate pentru ecrane foarte mici (telefoane mici) */
-@media (max-width: 480px) {
-    #header {
-        width: 15vw; /* Header mai lat pe telefoane foarte mici */
-    }
-    .menu {
-        left: 15vw;
-    }
-    .menu-button {
-        font-size: 6vw; /* Buton foarte mare pe telefoane mici */
-        padding: 3vw;
-    }
-    .menu.open {
-        left: 15vw;
-    }
-    .menu ul li {
-        padding: 3vw; /* Spațiu mai mare între elementele meniului */
-    }
-    .menu ul li a {
-        font-size: 1.2rem; /* Dimensiune mai mare pentru font pe telefoane mici */
-    }
+#header.scrolled {
+    background-color: rgba(0, 0, 0, 0.2);
 }

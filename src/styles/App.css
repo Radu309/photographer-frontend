@@ -3,47 +3,13 @@
     padding: 0;
     box-sizing: border-box;
 }
-html, body{
-    height: 100%;
-    overflow-x: hidden;
-}
-body {
-    display: flex;
-    min-height: 100vh;
-}
-main {
-    /*margin-left: 5vw;*/
-    /*width: calc(100vw - 5vw);*/
+body, html {
     width: 100vw;
     min-height: 100vh;
-    background-color: rgb(30, 30, 30);
-    background-size: cover; /* Asigură-te că imaginea acoperă întreg fundalul */
-    background-attachment: fixed; /* Asigură că fundalul rămâne fixat când scrollezi */
-    background-position: center;
-    flex: 1;
+    overflow-x: hidden;
+    background-color: white;
 }
-/*@media (max-width: 1024px) {*/
-/*    main {*/
-/*        margin-left: 8vw;*/
-/*        width: calc(100vw - 8vw);*/
-/*    }*/
-/*}*/
-
-/*!* Responsivitate pentru ecrane mici (telefon) *!*/
-/*@media (max-width: 768px) {*/
-/*    main {*/
-/*        margin-left: 10vw;*/
-/*        width: calc(100vw - 10vw);*/
-/*    }*/
-/*}*/
-
-/*!* Responsivitate pentru ecrane foarte mici (telefoane mici) *!*/
-/*@media (max-width: 480px) {*/
-/*    main {*/
-/*    margin-left: 15vw;*/
-/*    width: calc(100vw - 15vw);*/
-/*    }*/
-/*}*/
-
-
-
+main{
+    width: 100%;
+    height: 100%;
+}
