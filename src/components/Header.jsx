@@ -1,4 +1,4 @@
-import "/src/styles/Header.css"
+import "/src/components/styles/Header.css"
 import {useNavigate} from "react-router-dom";
 import {useEffect, useState} from "react";
 

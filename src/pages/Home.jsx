@@ -2,8 +2,10 @@ import wedding1 from '/src/images/wedding1.jpg';
 import wedding2 from '/src/images/wedding2.webp';
 import wedding3 from '/src/images/wedding3.webp';
 import wedding4 from '/src/images/wedding4.webp';
+import logoPhotographer from '/src/icons/jpg/photographer-logo.jpg';
 import {useState} from "react";
 import "/src/pages/styles/Home.css"
+import "/src/pages/styles/Block-1.css"
 
 const images = [
     wedding1,
@@ -49,10 +51,38 @@ const Home = () => {
                             <button className="arrow-right" onClick={handleNext}>&#187;</button>
                         </div>
                     </div>
-                    {/*<img className="image" src={images[0]} alt="Wedding background"/>*/}
                 </div>
                 <div className="block-2">
-                <img className="image" src={images[1]} alt="Wedding background"/>
+                    <div className="container">
+                        <div className="text-left">
+                            Momente reale, capturate cu sinceritate. Fiecare imagine spune o poveste unică și autentică.
+                        </div>
+                        <div className="vertical-bar"/>
+                        <div className="img-mid">
+                            <img src={logoPhotographer} alt="Logo photographer"/>
+                        </div>
+                        <div className="vertical-bar"/>
+                        <div className="text-right">
+                            Planul tău este să te bucuri de fiecare clipă, iar scopul meu este să transform acele clipe
+                            în amintiri de neuitat
+                        </div>
+                    </div>
+                </div>
+                <div className="block-2">
+                    <div className="container">
+                        <div className="text-left">
+                            Momente reale, capturate cu sinceritate. Fiecare imagine spune o poveste unică și autentică.
+                        </div>
+                        <div className="vertical-bar"/>
+                        <div className="img-mid">
+                            <img src={logoPhotographer} alt="Logo photographer"/>
+                        </div>
+                        <div className="vertical-bar"/>
+                        <div className="text-right">
+                            Planul tău este să te bucuri de fiecare clipă, iar scopul meu este să transform acele clipe
+                            în amintiri de neuitat
+                        </div>
+                    </div>
                 </div>
                 <div className="block-3">
 

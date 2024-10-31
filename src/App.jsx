@@ -2,7 +2,7 @@ import {Route, Routes} from "react-router-dom";
 import Home from "/src/pages/Home.jsx"
 import Header from "/src/components/Header.jsx"
 import Contact from "./pages/Contact.jsx";
-import "/src/styles/App.css"
+import "/src/App.css"
 
 const App = () => {
 
