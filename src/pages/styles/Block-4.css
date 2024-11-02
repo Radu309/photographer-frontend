@@ -1,0 +1,65 @@
+.block-4{
+    background-color: #1c2331;
+    position: relative;
+    width: 100%;
+    height: 35vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+.block-4 .container{
+    color: white;
+    width: 80%;
+    height: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.block-4 .company-description{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30vw;
+}
+.block-4 .contact-footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 22vw;
+}
+.block-4 h2 {
+    display: flex;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 2vw;
+    margin-bottom: 2vh;
+}
+.block-4 p {
+    display: flex;
+    align-self: start;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.2vw;
+    margin-bottom: 0.5vh;
+}
+.block-4 .icon-footer{
+    margin-right: 1vw;
+    max-width: 2vw;
+    max-height: 2vw;
+}
+.links-footer{
+    height: 7vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.block-4 .copy-right{
+}

@@ -4,11 +4,17 @@ import wedding3 from '/src/images/wedding3.webp';
 import wedding4 from '/src/images/wedding4.webp';
 import logoPhotographer from '/src/icons/jpg/photographer-logo.jpg';
 import rusinaruProfile from '/src/images/rusinaru-profile.jfif';
+import GmailIcon from '/src/icons/gmail-white.png';
+import FacebookIcon from '/src/icons/facebook-white.png';
+import InstagramIcon from '/src/icons/instagram-white.png';
+import TelephoneIcon from '/src/icons/telephone-white.png';
+import HouseIcon from '/src/icons/house-white.png';
 import {useState} from "react";
 import "/src/pages/styles/Home.css"
 import "/src/pages/styles/Block-1.css"
 import "/src/pages/styles/Block-2.css"
 import "/src/pages/styles/Block-3.css"
+import "/src/pages/styles/Block-4.css"
 
 const images = [
     wedding1,
@@ -78,17 +84,49 @@ const Home = () => {
                         </div>
                         <div className="description-block">
                             <div className="description-container">
-                                Description
+                                <h2>Ruşinaru Florinel-Ştefan</h2>
+                                <p>
+                                    Salut! Sunt un fotograf pasionat, specializat în fotografie de
+                                    peisaj și portret. Îmi place să surprind momente unice și să
+                                    creez imagini care spun o poveste. Experiența mea se întinde pe
+                                    mai mulți ani și am lucrat cu clienți din diverse domenii. Îmi
+                                    doresc să transform fiecare sesiune foto într-o experiență de
+                                    neuitat pentru cei din fața obiectivului.
+                                </p>
                             </div>
                         </div>
                     </div>
-                    <div className="block-4">
-
+                </div>
+                <div className="block-4">
+                    <div className="container">
+                        <div className="company-description">
+                            <h2>RSR -videography-</h2>
+                            <p> Ai nevoie de ajutor sau vrei să discuți cu noi? Contactează-ne prin e-mail sau telefon.
+                                Suntem aici pentru tine! </p>
+                        </div>
+                        <div className="contact-footer">
+                            <h2>Contact</h2>
+                            <p>
+                                <img className="icon-footer" src={HouseIcon} alt="Icon"/>
+                                Sat. Butoiesti, Jud. Mehedinti
+                            </p>
+                            <p>
+                                <img className="icon-footer" src={TelephoneIcon} alt="Icon"/>
+                                +40 740 123 456
+                            </p>
+                            <p>
+                                <img className="icon-footer" src={GmailIcon} alt="Icon"/>
+                                rusinaru.exemplu@gmail.com
+                            </p>
+                        </div>
+                    </div>
+                    <div className="links-footer">
+                        © 2020 Copyright: rușinaru-videography.org
                     </div>
                 </div>
             </div>
         </section>
-);
+    );
 }
 
 export default Home;
