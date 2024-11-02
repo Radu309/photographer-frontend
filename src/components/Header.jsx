@@ -1,26 +1,40 @@
-import "/src/styles/Header.css"
-import {useState} from "react";
+import "/src/components/styles/Header.css"
+import {useNavigate} from "react-router-dom";
+import {useEffect, useState} from "react";
 
 const Header = () => {
-    const [menuOpen, setMenuOpen] = useState(false);
+    const navigate = useNavigate();
+    const [scrolled, setScrolled] = useState(false);
 
-    const toggleMenu = () => {
-        setMenuOpen(!menuOpen);
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 0) {
+                setScrolled(true);
+            } else {
+                setScrolled(false);
+            }
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
+    const handleContactClick = () => {
+        navigate('/contact');
+    };
+    const handleHomeClick = () => {
+        navigate('/');
     };
     return(
-        <header id="header">
-            <div className="sidebar">
-                <button className="menu-button" onClick={toggleMenu}>
-                    ☰
-                </button>
-                <nav
-                    className={`menu ${menuOpen ? 'open' : 'closed'}`}>
-                    <ul>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/contact">Contact</a></li>
-                        <li><a href="/about">About</a></li>
-                    </ul>
-                </nav>
+        <header id="header" className={scrolled ? "scrolled" : ""}>
+            <div className="header-body">
+                <div className="header-container">
+                    <div className="icon-text" onClick={handleHomeClick}>
+                        <span>RSR</span>
+                        <span>-videography-</span>
+                    </div>
+                    <button className="contact-button" onClick={handleContactClick}>Contact</button>
+                </div>
             </div>
         </header>
     )

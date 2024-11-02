@@ -1,7 +1,7 @@
 import React from 'react';
-import '/src/styles/Contact.css';
-import '/src/styles/Contact-info.css';
-import '/src/styles/Contact-form.css';
+import '/src/pages/styles/Contact.css';
+import '/src/pages/styles/Contact-info.css';
+import '/src/pages/styles/Contact-form.css';
 import UserIcon from '/src/icons/user.svg';
 import MailIcon from '/src/icons/email.svg';
 import MessageIcon from '/src/icons/message.svg';

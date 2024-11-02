@@ -1,171 +1,130 @@
-import '/src/styles/Home.css'
-import {useEffect, useState} from "react";
-import wedding1 from '/src/images/wedding1.webp';
+import wedding1 from '/src/images/wedding1.jpg';
 import wedding2 from '/src/images/wedding2.webp';
 import wedding3 from '/src/images/wedding3.webp';
 import wedding4 from '/src/images/wedding4.webp';
+import logoPhotographer from '/src/icons/jpg/photographer-logo.jpg';
+import rusinaruProfile from '/src/images/rusinaru-profile.jfif';
+import GmailIcon from '/src/icons/gmail-white.png';
+import FacebookIcon from '/src/icons/facebook-white.png';
+import InstagramIcon from '/src/icons/instagram-white.png';
+import TelephoneIcon from '/src/icons/telephone-white.png';
+import HouseIcon from '/src/icons/house-white.png';
+import {useState} from "react";
+import "/src/pages/styles/Home.css"
+import "/src/pages/styles/Block-1.css"
+import "/src/pages/styles/Block-2.css"
+import "/src/pages/styles/Block-3.css"
+import "/src/pages/styles/Block-4.css"
 
 const images = [
     wedding1,
     wedding2,
     wedding3,
     wedding4,
-    wedding1,
-    wedding2,
-    wedding3,
-    wedding4,
-    wedding1,
-    wedding2,
-    wedding3,
-    wedding4,
-    wedding1,
-    wedding2,
-    wedding3,
-    wedding4,
-    wedding1,
-    wedding2,
-    wedding3,
-    wedding4,
-    wedding1,
-    wedding2,
-    wedding3,
-    wedding4,
-    wedding1,
-    wedding2,
-    wedding3,
-    wedding4,
-    wedding1,
-    wedding2,
-    wedding3,
-    wedding4,
+];
+const firstText = [
+    "Capturând momentele",
+    "Unde iubirea întâlnește",
+    "Fiecare detaliu spune",
+    "În rama amintirilor"
+];
+
+const secondText = [
+    "ce rămân veșnice.",
+    "lumina perfectă.",
+    "o poveste aparte.",
+    "păstrate pentru totdeauna."
 ];
 
 const Home = () => {
-    const [selectedImage, setSelectedImage] = useState(null);
-    const [selectedIndex, setSelectedIndex] = useState(null);
-    const [touchStartX, setTouchStartX] = useState(null);
-    const [touchEndX, setTouchEndX] = useState(null);
-    const [translateX, setTranslateX] = useState(0); // State for translation
-    const [swiping, setSwiping] = useState(false); // State to determine if swiping
+    const [currentIndex, setCurrentIndex] = useState(0);
 
-    useEffect(() => {
-        const handleKeyDown = (event) => {
-            if (event.key === 'ArrowLeft') {
-                showPrevImage();
-            } else if (event.key === 'ArrowRight') {
-                showNextImage();
-            } else if (event.key === 'Escape') {
-                closeImage();
-            }
-        };
-
-        if (selectedImage) {
-            window.addEventListener('keydown', handleKeyDown);
-        }
-
-        return () => {
-            window.removeEventListener('keydown', handleKeyDown);
-        };
-    }, [selectedImage, selectedIndex]);
-
-    const openImage = (image, index) => {
-        setSelectedImage(image);
-        setSelectedIndex(index);
-        setTranslateX(0); // Reset translation when opening a new image
+    const handleNext = () => {
+        setCurrentIndex((currentIndex + 1) % images.length);
     };
 
-    const closeImage = () => {
-        setSelectedImage(null);
-        setSelectedIndex(null);
-        setTranslateX(0); // Reset translation when closing
+    const handlePrev = () => {
+        setCurrentIndex((currentIndex - 1 + images.length) % images.length);
     };
-
-    const showPrevImage = () => {
-        const prevIndex = selectedIndex === 0 ? images.length - 1 : selectedIndex - 1;
-        setSelectedImage(images[prevIndex]);
-        setSelectedIndex(prevIndex);
-        setTranslateX(0); // Reset translation when changing image
-    };
-
-    const showNextImage = () => {
-        const nextIndex = selectedIndex === images.length - 1 ? 0 : selectedIndex + 1;
-        setSelectedImage(images[nextIndex]);
-        setSelectedIndex(nextIndex);
-        setTranslateX(0); // Reset translation when changing image
-    };
-
-    // Touch event handlers
-    const handleTouchStart = (e) => {
-        setTouchStartX(e.touches[0].clientX); // Capture the starting position
-        setSwiping(true); // Set swiping to true
-    };
-
-    const handleTouchMove = (e) => {
-        if (touchStartX !== null) {
-            setTouchEndX(e.touches[0].clientX); // Update the ending position
-            // Calculate translation based on touch movement
-            const movementX = e.touches[0].clientX - touchStartX;
-            setTranslateX(movementX); // Update translation
-        }
-    };
-
-    const handleTouchEnd = () => {
-        if (touchStartX !== null && touchEndX !== null) {
-            if (touchStartX - touchEndX > 50) {
-                // Swipe left
-                showNextImage();
-            } else if (touchEndX - touchStartX > 50) {
-                // Swipe right
-                showPrevImage();
-            }
-        }
-        // Reset touch positions and translation
-        setTouchStartX(null);
-        setTouchEndX(null);
-        setTranslateX(0); // Reset translation
-        setSwiping(false); // Set swiping to false
-    };
-
     return (
         <section id="home">
-            <div className="image-grid">
-                {images.map((image, index) => (
-                    <div className="image-item" key={index} onClick={() => openImage(image, index)}>
-                        <img src={image} alt={`Image ${index + 1}`}/>
+            <div className="home-container">
+                <div className="block-1">
+                    <img className="image" src={images[currentIndex]} alt="Wedding background"/>
+                    <div className="content-image">
+                        <div className="text-1">{firstText[currentIndex]}</div>
+                        <div className="horizontal-bar"></div>
+                        <div className="arrows-buttons">
+                            <button className="arrow-left" onClick={handlePrev}>&#171;</button>
+                            <div className="text-2-mid">{secondText[currentIndex]}</div>
+                            <button className="arrow-right" onClick={handleNext}>&#187;</button>
+                        </div>
                     </div>
-                ))}
-            </div>
-
-            {selectedImage && (
-                <div className="overlay" onClick={closeImage}>
-                    <div className="overlay-content"
-                         onTouchStart={handleTouchStart}
-                         onTouchMove={handleTouchMove}
-                         onTouchEnd={handleTouchEnd}>
-                        <div className="image-display" >
-                            <img src={selectedImage} alt="Selected"/>
-                            <div className="image-counter">
-                                {selectedIndex + 1} / {images.length}
+                </div>
+                <div className="block-2">
+                    <div className="container">
+                        <div className="text-left">
+                            Momente reale, capturate cu sinceritate. Fiecare imagine spune o poveste unică și autentică.
+                        </div>
+                        <div className="vertical-bar"/>
+                        <div className="img-mid">
+                            <img src={logoPhotographer} alt="Logo photographer"/>
+                        </div>
+                        <div className="vertical-bar"/>
+                        <div className="text-right">
+                            Planul tău este să te bucuri de fiecare clipă, iar scopul meu este să transform acele clipe
+                            în amintiri de neuitat
+                        </div>
+                    </div>
+                </div>
+                <div className="block-3">
+                    <div className="container">
+                        <div className="profile-image">
+                            <img src={rusinaruProfile} alt="Profile picture"/>
+                        </div>
+                        <div className="description-block">
+                            <div className="description-container">
+                                <h2>Ruşinaru Florinel-Ştefan</h2>
+                                <p>
+                                    Salut! Sunt un fotograf pasionat, specializat în fotografie de
+                                    peisaj și portret. Îmi place să surprind momente unice și să
+                                    creez imagini care spun o poveste. Experiența mea se întinde pe
+                                    mai mulți ani și am lucrat cu clienți din diverse domenii. Îmi
+                                    doresc să transform fiecare sesiune foto într-o experiență de
+                                    neuitat pentru cei din fața obiectivului.
+                                </p>
                             </div>
                         </div>
                     </div>
-                    <div className="nav-arrow left-arrow" onClick={(e) => {
-                        e.stopPropagation();
-                        showPrevImage();
-                    }}>
-                        &#11160;
-                        {/*⮘*/}
+                </div>
+                <div className="block-4">
+                    <div className="container">
+                        <div className="company-description">
+                            <h2>RSR -videography-</h2>
+                            <p> Ai nevoie de ajutor sau vrei să discuți cu noi? Contactează-ne prin e-mail sau telefon.
+                                Suntem aici pentru tine! </p>
+                        </div>
+                        <div className="contact-footer">
+                            <h2>Contact</h2>
+                            <p>
+                                <img className="icon-footer" src={HouseIcon} alt="Icon"/>
+                                Sat. Butoiesti, Jud. Mehedinti
+                            </p>
+                            <p>
+                                <img className="icon-footer" src={TelephoneIcon} alt="Icon"/>
+                                +40 740 123 456
+                            </p>
+                            <p>
+                                <img className="icon-footer" src={GmailIcon} alt="Icon"/>
+                                rusinaru.exemplu@gmail.com
+                            </p>
+                        </div>
                     </div>
-
-                    <div className="nav-arrow right-arrow" onClick={(e) => {
-                        e.stopPropagation();
-                        showNextImage();
-                    }}>
-                        &#11162;
-                        {/*⮚*/}
+                    <div className="links-footer">
+                        © 2020 Copyright: rușinaru-videography.org
                     </div>
                 </div>
-            )}
+            </div>
         </section>
     );
 }
