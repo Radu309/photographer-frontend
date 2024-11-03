@@ -52,6 +52,7 @@
     max-height: 2vw;
 }
 .links-footer{
+    font-size: 1vw;
     height: 7vh;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.2);
@@ -61,5 +62,39 @@
     align-items: center;
     justify-content: center;
 }
-.block-4 .copy-right{
+@media (max-width: 768px) {
+    .block-4 {
+        height: auto; /* permite extinderea secțiunii */
+        padding-top: 20px; /* spațiu suplimentar pentru margini */
+    }
+    .block-4 .container {
+        flex-direction: column; /* stivuit pe verticală pentru ecrane mici */
+        width: 70%; /* utilizează mai mult spațiu din lățimea ecranului */
+        height: auto;
+        text-align: center; /* centrează textul pentru lizibilitate */
+    }
+    .block-4 .company-description, .block-4 .contact-footer {
+        width: 100%; /* ocupă întreaga lățime pentru ecrane mici */
+        margin-bottom: 15px; /* spațiu între secțiuni */
+    }
+    .block-4 h2 {
+        font-size: 5vw; /* font mai mare pentru ecrane mici */
+        margin-bottom: 1vh; /* reduce spațiul pentru a adapta layout-ul */
+    }
+    .block-4 p {
+        font-size: 3.5vw; /* text mai mare pentru lizibilitate pe ecrane mici */
+        margin-bottom: 1vh; /* spațiu mai mic între paragrafe */
+        align-self: center; /* centrează paragrafele */
+    }
+    .block-4 .icon-footer {
+        margin-right: 0.5vw;
+        max-width: 5vw; /* mărește iconițele pentru a fi vizibile pe ecrane mici */
+        max-height: 5vw;
+    }
+    .links-footer {
+        width: 100%;
+        font-size: 3vw; /* font mai mare pentru linkuri pe ecrane mici */
+        height: auto; /* permite extinderea pe verticală dacă este necesar */
+        padding: 10px; /* spațiu suplimentar în interior */
+    }
 }

@@ -6,9 +6,12 @@
     align-items: center;
     align-content: center;
     width: 100%;
-    height: 100vh;
+    height: 100%;
 }
-
+.contact-header-space{
+    width: 100%;
+    height: 10vh;
+}
 .contact-container {
     display: flex;
     flex-direction: row-reverse;
@@ -32,17 +35,12 @@
     justify-content: center;
     align-items: center;
 }
-@media (max-width: 1024px) {
-    .contact-container {
-        display: flex;
-        flex-direction: row-reverse;
-    }
-}
 
 /* Responsivitate pentru ecrane mici (telefon) */
 @media (max-width: 768px) {
     #contact{
         height: 100%;
+        width: 100%;
     }
     .contact-form{
         padding-top: 2rem;
@@ -54,17 +52,4 @@
         padding-top: 2rem;
     }
 }
-
-/*!* Responsivitate pentru ecrane foarte mici (telefoane mici) *!*/
-/*@media (max-width: 480px) {*/
-/*    #contact{*/
-/*        height: 100%;*/
-/*        padding-top: 2rem;*/
-
-/*    }*/
-/*    .contact-container {*/
-/*        display: flex;*/
-/*        flex-direction: column;*/
-/*    }*/
-/*}*/
 

@@ -66,3 +66,45 @@
     line-height: 1.6;
     font-size: 1.5vw;
 }
+@media (max-width: 768px) {
+    .block-3 {
+        height: auto; /* permite secțiunii să se extindă pe înălțime */
+        padding: 20px; /* spațiu suplimentar pentru margini */
+    }
+    .block-3 .container {
+        flex-direction: column; /* stivuit pe verticală pentru ecrane mici */
+        align-items: center;
+    }
+    .profile-image {
+        height: auto; /* ajustează înălțimea pentru imagini mai mici */
+        justify-content: center; /* centru pe ecrane mici */
+        margin-bottom: 20px; /* spațiu între imagine și text */
+        flex: none; /* oprește scalarea în raport cu textul */
+    }
+    .profile-image img {
+        max-width: 50vw; /* mărește imaginea pe ecrane mici pentru vizibilitate */
+        height: auto;
+    }
+    .description-block {
+        flex-direction: column; /* stivuit pe verticală */
+        align-items: center; /* centrează textul */
+        height: auto;
+        padding-left: 0; /* elimină padding-ul lateral */
+    }
+    .description-container {
+        width: 90%; /* ocupă mai mult spațiu pe lățimea ecranului */
+        height: auto; /* permite extinderea pe verticală dacă textul este mai lung */
+        padding: 10px; /* spațiu suplimentar pentru interior */
+    }
+    .description-container h2 {
+        font-size: 5vw; /* text mai mare pentru vizibilitate pe ecrane mici */
+        padding-top: 10px;
+        padding-bottom: 15px;
+    }
+    .description-container p {
+        font-size: 4vw; /* ajustează textul descriptiv pentru ecrane mici */
+        line-height: 1.4; /* ajustare a spațierii pentru lizibilitate */
+        padding: 5px 10px; /* spațiu suplimentar în jurul textului */
+        text-align: center; /* aliniere centrală pentru lizibilitate mai bună */
+    }
+}

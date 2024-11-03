@@ -11,6 +11,7 @@ import LocationIcon from '/src/icons/location.svg';
 import TelephoneIcon from '/src/icons/telephone.svg';
 import Footer from "../components/Footer.jsx";
 import emailjs from '@emailjs/browser';
+import Header from "../components/Header.jsx";
 
 // Funcții pentru redirectare
 const handleRedirect = (url) => {
@@ -112,11 +113,12 @@ const FormGroup = ({ icon, placeholder, inputType, name }) => (
 // Componenta principală Contact
 const Contact = () => (
     <section id="contact">
+        <div className="contact-header-space"></div>
         <div className="contact-container">
-            <ContactInfo />
-            <ContactForm />
+            <ContactInfo/>
+            <ContactForm/>
         </div>
-        <Footer />
+        <div className="contact-header-space"></div>
     </section>
 );
 

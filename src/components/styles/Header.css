@@ -4,7 +4,7 @@
     z-index: 1000;
     width: 100%;
     background-color: rgba(0, 0, 0, 0);
-    height: 7rem;
+    height: 10vh;
     transition: background-color 0.3s ease;
 
     .header-body{
@@ -45,4 +45,26 @@
 }
 #header.scrolled {
     background-color: rgba(0, 0, 0, 0.4);
+}
+@media (max-width: 768px) {
+    #header {
+        height: 10vh;
+    }
+    #header .header-body {
+        padding: 0 10px; /* spațiu pentru margini */
+    }
+    #header .header-container {
+        width: 95%; /* lărgește containerul pentru a ocupa toată lățimea */
+        align-items: center;
+    }
+    #header .icon-text {
+        font-size: 2vw; /* font mai mic pentru icon text */
+        text-align: center; /* centrează textul */
+    }
+    #header .contact-button {
+        padding: 8px 16px; /* ajustează padding-ul pentru buton */
+        font-size: 2vw; /* font mai mic pentru ecrane mici */
+        width: auto; /* ajustează butonul pentru a se adapta mai bine la spațiu */
+        margin-top: 5px; /* spațiu între text și buton */
+    }
 }

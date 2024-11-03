@@ -15,6 +15,7 @@ import "/src/pages/styles/Block-1.css"
 import "/src/pages/styles/Block-2.css"
 import "/src/pages/styles/Block-3.css"
 import "/src/pages/styles/Block-4.css"
+import Header from "../components/Header.jsx";
 
 const images = [
     wedding1,

@@ -10,7 +10,7 @@
 }
 .content-image{
     position: absolute;
-    top: 75%;
+    top: 80%;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -20,24 +20,23 @@
     width: 80%;
 }
 .text-1{
-    padding-bottom: 1rem;
+    padding-bottom: 1vh;
     display: flex;
     align-items: center;
     justify-content: center;
 
     font-family: 'Georgia', serif;
-    font-size: 2rem;
+    font-size: 2vw;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
     color: #ffffff;
     text-align: center;
-    margin: 20px 0;
-    letter-spacing: 1.2px; /* Spațiere pentru eleganță */
-    line-height: 1.5;
+    letter-spacing: 0.2vw;
+    /*line-height: 1.5;*/
 }
 .horizontal-bar {
     border-radius: 100px;
     width: 100%;
-    height: 2px;
+    height: 0.2vh;
     background-color: white;
 }
 .arrows-buttons{
@@ -50,7 +49,7 @@
     background-color: rgba(0, 0, 0, 0.0);
     color: white;
     border: none;
-    font-size: 4rem;
+    font-size: 4vw;
     cursor: pointer;
 }
 .arrows-buttons button:hover{
@@ -62,18 +61,40 @@
     justify-content: center;
     text-align: center;
     font-family: 'Georgia', serif;
-    font-size: 1.6rem;
+    font-size: 1.5vw;
     color: #ffffff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-    margin: 20px 0;
-    letter-spacing: 1px;
+    letter-spacing: 0.1vw;
     line-height: 1.5;
 }
-.arrow-left {
+.arrow-left, .arrow-right {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-    text-align: left;
 }
-.arrow-right {
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-    text-align: right;
+/* Stiluri pentru ecrane mici */
+@media (max-width: 768px) {
+    .block-1 img {
+        width: 100vw;
+        height: auto;
+    }
+    .content-image {
+        top: 70%; /* ajustat pentru a oferi mai mult spațiu în partea superioară */
+        width: 90%; /* mai mult spațiu pentru conținut */
+    }
+    .text-1 {
+        font-size: 5vw; /* font mai mic pentru ecrane mici */
+        letter-spacing: 0.1vw;
+    }
+    .horizontal-bar {
+        height: 1px; /* mai subțire pentru ecrane mici */
+    }
+    .arrows-buttons button {
+        font-size: 8vw; /* butoane mai mici pentru ecrane mici */
+    }
+    .text-2-mid {
+        font-size: 4vw; /* font mai mic pentru ecrane mici */
+        letter-spacing: 0.05vw;
+    }
+    .arrow-left, .arrow-right {
+        font-size: 6vw; /* ajustare pentru ca să fie ușor de accesat */
+    }
 }

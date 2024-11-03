@@ -1,5 +1,4 @@
 .block-2{
-    /*background-color: rgba(1, 70, 70, 0.2);*/
     position: relative;
     width: 100%;
     height: 40vh;
@@ -47,4 +46,28 @@
 .img-mid img{
     width: 15vw;
     height: auto;
+}
+@media (max-width: 768px) {
+    .block-2 {
+        height: auto; /* permite secțiunii să crească în înălțime pe ecrane mici */
+        padding: 10px; /* spațiu suplimentar pentru a preveni tăierea conținutului */
+    }
+    .block-2 .container {
+        flex-direction: column; /* stivuit pe verticală pentru a optimiza spațiul */
+        align-items: center; /* centrează elementele */
+    }
+    .vertical-bar {
+        width: 2px; /* mai subțire pe ecrane mici */
+        height: 50px; /* mai scurtă pentru a ocupa mai puțin spațiu */
+    }
+    .text-left, .text-right {
+        max-width: 90%; /* ocupă mai mult spațiu pe lățime */
+        font-size: 4vw; /* font mai mic pentru ecrane mici */
+        padding-left: 2vw;
+        padding-right: 2vw;
+        text-align: center; /* aliniere centrală pentru o lizibilitate mai bună */
+    }
+    .img-mid img {
+        width: 35vw; /* imaginea este mărită pentru vizibilitate */
+    }
 }
